@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
         movement(xgo, mv, step);
         normalize(mv);
         fputs("splot \"-\" binary format =\"%float%float%float\" record = ",gp);
-        fprintf(gp, "%d u 1:2:3 \n", mv.size());
+        fprintf(gp, "%d u 1:2:3:0 palette \n", mv.size());
         fwrite(&(mv[0]), mv.size(), 12, gp);
         
         fflush(gp);
