@@ -33,14 +33,6 @@ public:
 vector<coord> xgo, cell;
 vector<float> elapse;
 
-
-void diff(float *a, float *b, float *c)
-{
-   c[0] = b[0] - a[0];
-   c[1] = b[1] - a[1];
-   c[2] = b[2] - a[2];
-}
-
 void read(const char filename[])
 {
     xgo.clear();
@@ -60,7 +52,7 @@ void movement(vector<coord> &in, vector<coord> &mv, int step)
 {
     mv.clear();
     cout << "cleared"<<endl;
-    for(int i = 0; i < in.size()-step; i+=step){
+    for(int i = 0; i < in.size()-step; i++){
         mv.push_back(coord(in[i], in[i+step]));
   //      cout <<i<< " "<<(*(mv.rbegin()))[0]<<endl;
     }
