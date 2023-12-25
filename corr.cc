@@ -73,6 +73,8 @@ int main(int argc, char *argv[])
     gp = popen("/usr/local/bin/gnuplot --persist", "w");
     read(argv[1]);
     fputs("set view equal xyz\n", gp);
+    fputs("set xyplane 0\n", gp);
+
     fflush(gp);
     vector<coord> mv;
     int step;
