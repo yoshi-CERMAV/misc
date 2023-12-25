@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 {
     gp = popen("/usr/local/bin/gnuplot --persist", "w");
     read(argv[1]);
-    fputs("plot x\n", gp);
+    fputs("set view equal xyz\n", gp);
     fflush(gp);
     vector<coord> mv;
     int step;
